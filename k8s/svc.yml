@@ -1,22 +1,13 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: v1
+kind: Service
 metadata:
+  name: myapp
   labels:
     app: myapp
-  name: myapp
 spec:
-  replicas: 1
+  type: NodePort
   selector:
-    matchLabels:
-      app: myapp
-  strategy: {}
-  template:
-    metadata:
-      labels:
-        app: myapp
-    spec:
-      containers:
-      - image: doycho1007/echoes-of-aster-source
-        name: echoes-of-aster-source
-        resources: {}
-status: {}
+    app: myapp
+  ports:
+  - port: 80
+    targetPort: 3000

@@ -16,7 +16,7 @@ spec:
         app: myapp
     spec:
       containers:
-      - image: doycho1007/echoes-of-aster-source
+      - image: doycho/echoes-of-aster-source:latest
         name: echoes-of-aster-source
         resources: {}
 status: {}
